@@ -2,6 +2,10 @@
 driver:
   name: vagrant
 
+transport:
+  name: sftp
+  max_ssh_sessions: 5
+
 provisioner:
   name: ansible_playbook
   roles_path: catalog/
