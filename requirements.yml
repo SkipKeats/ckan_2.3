@@ -5,6 +5,5 @@
 # using this file. Follow the instructions at http://docs.ansible.com/ansible/galaxy.html
 # to include any roles you want installed prior to running main.yml.
 
-- src: https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
-  version: 2.7.6 
-  name: python_role
+#- src: software/ubuntu/common
+#  name: ubuntu_common
