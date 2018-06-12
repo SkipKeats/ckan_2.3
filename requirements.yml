@@ -5,6 +5,5 @@
 # using this file. Follow the instructions at http://docs.ansible.com/ansible/galaxy.html
 # to include any roles you want installed prior to running main.yml.
 
-- src: tersmitten.htop
-  version: latest
-  name: htop
+- src: catalog/roles/software/ubuntu/common/
+  name: ubuntu_common
