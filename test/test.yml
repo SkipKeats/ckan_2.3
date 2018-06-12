@@ -13,7 +13,5 @@
   ## redis, fgdc2iso, cron
   ## sample usage: ansible-playbook ansibe/catalog.yml --tags "harvester" --skip-tags "solr,apache"
 
-  #roles:
-  #- { role: 'software/ubuntu/common', tags ['always']}
-
-
+  roles:
+  - { role: termitten.htop }

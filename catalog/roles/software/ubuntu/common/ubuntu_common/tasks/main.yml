@@ -1,19 +1,20 @@
 ---
-- name: Get information on newest versions of packages and their dependencies
+# tasks file for ubuntu_common
+- name: get information on newest versions of packages and their dependencies
   apt: update_cache=yes
 
-- name: Make sure packages are installed
-  action: apt pkg={{ item }} state=installed
+- name: make sure packages are installed
+  action: apt pkg={{item}} state=installed
   with_items:
     - htop
-    - atool 
+    - atool
     - ruby
     - python-virtualenv
     - python-setuptools
     - git
     - python-dev
     - ruby-dev
-    - postresql-client
+    - postgresql-client
     - bison
     - python-pip
     - libgeos-c1
@@ -25,19 +26,19 @@
     - libssl-dev
     - ntp
 
-# Upgrade python to 2.7.6
+# Upgrade python to 2.7.10
 - include: python-upgrade.yml
 
 # The Network Time Protocol is used to manage the system clock over a network
 # If every system on a network reliably reports the same time, then it is much easier to correlate log messages in case of an attack
 
-- name: Ensure ntp is installed
+- name: be sure ntp is installed
   apt: name=ntp state=installed
   tags:
-    - ntp 
+    - ntp
 
-- name: Ensure ntpd is running and enabled
+- name: be sure ntpd is running and enabled
   service: name=ntp state=started enabled=yes
   tags:
-    - ntp 
+    - ntp
     - AU-8
