@@ -5,5 +5,5 @@
 # using this file. Follow the instructions at http://docs.ansible.com/ansible/galaxy.html
 # to include any roles you want installed prior to running main.yml.
 
-- src: catalog/roles/software/ubuntu/common/
-  name: ubuntu_common
+- src: https://github.com/GSA/ubuntu-common.git
+  name: ubuntu-common

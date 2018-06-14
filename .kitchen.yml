@@ -12,6 +12,8 @@ provisioner:
   requirements_path: requirements.yml
   hosts: all
   playbook: test/test.yml
+  ansible_cfg_path: ansible.cfg
+  ansible_vault_password_file: ~/ansible-secret.txt
   ansible_verbose: true
   ansible_verbosity: 4
   ansible_extra_flags: <%= ENV['ANSIBLE_EXTRA_FLAGS'] %>
@@ -29,6 +31,7 @@ platforms:
       box_check_update: true
       customize:
         memory: 4096
+      provision: true
       network:
         - ["private_network", {ip: "192.168.10.82"}]
       vm_hostname: catalog.local
